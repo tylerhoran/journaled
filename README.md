@@ -1,24 +1,5 @@
-# README
+# Journaled
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app will let you add academic journals to monitor for new issues. When there is a new issue, it will notify you via email with a link to the articles to download.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
