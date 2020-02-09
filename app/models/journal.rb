@@ -3,6 +3,10 @@ class Journal < ApplicationRecord
   has_many :articles, dependent: :destroy
   validates :issn, uniqueness: true
 
+  def self.refresh
+    find_each(&:refresh)
+  end
+
   def refresh
     tries = 0
     new_articles = []

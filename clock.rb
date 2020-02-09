@@ -7,4 +7,4 @@ handler do |job|
   puts "Running #{job}"
 end
 
-every(6.hours, 'update.articles') { ArticleUpdateJob.perform_later }
+every(6.hours, 'update.articles') { Journal.refresh }
