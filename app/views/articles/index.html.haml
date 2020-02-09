@@ -1,16 +1,14 @@
-= search_form_for @q do |f|
-  = f.label :author_cont, "Author"
-  = f.search_field :author_cont
-  = f.label :journal_name_cont, "Journal"
-  = f.search_field :journal_name_cont
-  = f.submit "Search"
-%tr
-  Sort By
+.float-right
+  = search_form_for @q, class: 'form-inline' do |f|
+    = f.search_field :author_cont, class: 'form-control mr-3', placeholder: 'Author'
+    = f.search_field :journal_name_cont, class: 'form-control mr-3', placeholder: 'Journal'
+    = f.submit "Search", class: 'btn btn-dark'
 = content_tag :table do
+  = content_tag :th, "Sort by:"
   = content_tag :th, sort_link(@q, :date)
   = content_tag :th, sort_link(@q, :author)
   = content_tag :th, sort_link(@q, :journals_name, "Journal")
-%table
+%table.table.mt-5
   %thead
     %tr
       %td Date
@@ -24,5 +22,7 @@
         %td= article.author
         %td= article.journal.name
         %td= link_to article.name, "https://www.sci-hub.tw/#{article.doi}"
-= paginate @articles
-= link_to 'Refresh', articles_path, method: :post
+.float-left
+  = paginate @articles, theme: 'twitter-bootstrap-4'
+.float-right
+  = link_to 'Refresh', articles_path, method: :post, class: 'btn btn-primary'

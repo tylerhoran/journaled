@@ -1,14 +1,26 @@
 !!!
-%html
+%html{:lang => "en"}
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "Mark Otto, Jacob Thornton, and Bootstrap contributors", :name => "author"}/
+    %meta{:content => "Jekyll v3.8.6", :name => "generator"}/
     %title Journaled
     = csrf_meta_tags
     = csp_meta_tag
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   %body
-    %ul.hmenu
-      = render 'devise/menu/registration_items'
-      = render 'devise/menu/login_items'
-    = yield
+    %nav.navbar.navbar-expand-md.navbar-light.bg-light.fixed-top
+      %a.navbar-brand{:href => "/"} Journaled
+      %button.navbar-toggler{"aria-controls" => "navbarsExampleDefault", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarsExampleDefault", "data-toggle" => "collapse", :type => "button"}
+        %span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        %ul.navbar-nav.mr-auto
+          = render 'devise/menu/registration_items'
+          = render 'devise/menu/login_items'
+    .container.mb-5
+      .col-lg-12.mt-5.pt-5
+        = yield

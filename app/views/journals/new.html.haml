@@ -1,18 +1,27 @@
 %h1 Add a journal to your subscribing list
 
 = form_for @journal, url: new_journal_path, method: :get do |f|
-  = f.label :name
-  = f.text_field :name
-  = f.submit "Search"
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control'
+  .actions
+    = f.submit "Search", class: 'btn btn-dark'
 
 - if @journals
-  %ul
+  %table.table.mt-5
+    %thead
+      %tr
+        %td Name
+        %td
+    %tbody
     - @journals['message']['items'].each do |result|
-      %li
-        = result['title']
-        = form_for Journal.new do |f|
-          = f.hidden_field :name, value: result['title']
-          = f.hidden_field :issn, value: result['ISSN'][0]
-          = f.submit "Add"
+      %tr
+        %td= result['title']
+        %td
+          = form_for Journal.new do |f|
+            = f.hidden_field :name, value: result['title']
+            = f.hidden_field :issn, value: result['ISSN'][0]
+            = f.submit "Add", class: 'btn btn-sm btn-dark'
     - if @journals['message']['items'].empty?
-      No Results
+      %tr
+        %td No Results
