@@ -1,0 +1,14 @@
+%p= "New Issue of #{@journal.name} with the following articles found"
+
+%table
+  %thead
+    %tr
+      %td Date
+      %td Author
+      %td Title
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td= article.date.strftime("%D")
+        %td= article.author
+        %td= link_to article.name, "https://www.sci-hub.tw/#{article.doi}"

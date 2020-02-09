@@ -1,0 +1,6 @@
+%h1 My Journal Subscriptions
+- current_user.journals.each do |journal|
+  = journal.name
+  = link_to 'Unsubscribe', journal_path(journal), method: :delete
+  %br
+= link_to 'Add a journal', new_journal_path

@@ -1,0 +1,10 @@
+= "New Issue of #{@journal.name} with the following articles found"
+
+Date Author Title
+- @articles.each do |article|
+  = article.date.strftime("%D")
+  = article.author
+  = article.name
+  = "https://www.sci-hub.tw/#{article.doi}"
+
+

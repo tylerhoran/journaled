@@ -1,0 +1,28 @@
+= search_form_for @q do |f|
+  = f.label :author_cont, "Author"
+  = f.search_field :author_cont
+  = f.label :journal_name_cont, "Journal"
+  = f.search_field :journal_name_cont
+  = f.submit "Search"
+%tr
+  Sort By
+= content_tag :table do
+  = content_tag :th, sort_link(@q, :date)
+  = content_tag :th, sort_link(@q, :author)
+  = content_tag :th, sort_link(@q, :journals_name, "Journal")
+%table
+  %thead
+    %tr
+      %td Date
+      %td Author(s)
+      %td Journal
+      %td Title
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td= article.date.strftime('%D')
+        %td= article.author
+        %td= article.journal.name
+        %td= link_to article.name, "https://www.sci-hub.tw/#{article.doi}"
+= paginate @articles
+= link_to 'Refresh', articles_path, method: :post
