@@ -14,7 +14,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'haml-rails'
 gem 'kaminari'
 gem 'ransack'
-gem 'clockwork'
+gem 'sidekiq-scheduler'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

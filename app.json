@@ -22,7 +22,7 @@
       "quantity": 1,
       "size": "free"
     },
-    "clock": {
+    "worker": {
       "quantity": 1,
       "size": "free"
     }
@@ -30,6 +30,7 @@
   "image": "heroku/ruby",
   "addons": [
     "mailgun",
-    "heroku-postgresql"
+    "heroku-postgresql",
+    "heroku-redis"
   ]
 }
