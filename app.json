@@ -34,11 +34,6 @@
   "image": "heroku/ruby",
   "addons": [
     "mailgun",
-    {
-      "plan": "mailgun:starter"
-    },
-    {
-      "plan": "heroku-postgresql"
-    }
+    "heroku-postgresql"
   ]
 }
