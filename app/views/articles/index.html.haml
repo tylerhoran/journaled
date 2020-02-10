@@ -26,9 +26,9 @@
         %td
           .hide
             = article.doi
-          %a{title: "Add this article to your Zotero library", href:"javascript:var d=document,s=d.createElement('script');s.src='https://www.zotero.org/bookmarklet/loader.js';(d.body?d.body:d.documentElement).appendChild(s);void(0);"}
-            Save to Zotero
 .float-left
   = paginate @articles, theme: 'twitter-bootstrap-4'
 .float-right
   = link_to 'Refresh', articles_path, method: :post, class: 'btn btn-primary'
+  %a{title: "Add this article to your Zotero library", href:"javascript:var d=document,s=d.createElement('script');s.src='https://www.zotero.org/bookmarklet/loader.js';(d.body?d.body:d.documentElement).appendChild(s);void(0);", class: 'btn btn-dark'}
+    Save to Zotero
