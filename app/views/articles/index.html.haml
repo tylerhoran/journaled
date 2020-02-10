@@ -15,6 +15,7 @@
       %td Author(s)
       %td Journal
       %td Title
+      %td
   %tbody
     - @articles.each do |article|
       %tr
@@ -22,6 +23,11 @@
         %td= article.author
         %td= article.journal.name
         %td= link_to article.name, "https://www.sci-hub.tw/#{article.doi}"
+        %td
+          .hide
+            = article.doi
+          %a{title: "Add this article to your Zotero library", href:"javascript:var d=document,s=d.createElement('script');s.src='https://www.zotero.org/bookmarklet/loader.js';(d.body?d.body:d.documentElement).appendChild(s);void(0);"}
+            Save to Zotero
 .float-left
   = paginate @articles, theme: 'twitter-bootstrap-4'
 .float-right

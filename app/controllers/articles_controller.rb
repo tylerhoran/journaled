@@ -8,6 +8,10 @@ class ArticlesController < ApplicationController
     @articles = @q.result(distinct: true).includes(:journal, :users).where(users: { id: current_user.id }).page(params[:page])
   end
 
+  def show
+    @article = Article.find(params[:id])
+  end
+
   def create
     current_user.refresh_articles
     redirect_to articles_path
