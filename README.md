@@ -1,12 +1,8 @@
 # Journaled
 
-This app will let you add academic journals to monitor for new issues. When there is a new issue, it will notify you via email with a link to the articles to download.
+Create a subscription list of all the journals in your field, access all the latest articles from those journals, and add articles to your reference manager (Zotero) all from one app. No subscriptions required. New content metadata is sourced from CrossRef and Content is available via SciHub Links.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-# Journaled
-
-Create a subscription list of all the journals in your field, access all the latest articles from those journals, and add articles to your reference manager (Zotero) all from one app. No subscriptions required. New content metadata is sourced from CrossRef and Content is available via SciHub Links.
 
 ## Getting Started
 
