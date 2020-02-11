@@ -14,6 +14,15 @@ Create a subscription list of all the journals in your field, access all the lat
 6. Click Refresh.
 7. You have access to your journals' latest content.
 
+## If you want to receive email updates of new issues
+
+1. Go to Heroku and Click on your app.
+2. Click on Manage App
+2. Click on Mailgun
+2. Click on Sending > Domains
+2. Click on the sandbox domain (sandbox......)
+2. Enter your email Address in the Authorized Recipients field
+
 * [Rails](https://rubyonrails.org) - The web framework used
 
 ## Contributing

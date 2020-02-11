@@ -53,7 +53,11 @@ class Journal < ApplicationRecord
     end
     if new_articles.length > 0 && backlog == false
       users.each do |user|
-        UserMailer.notify_new_issue(user, self, new_articles).deliver_now if user.issue_alerts
+        begin
+          UserMailer.notify_new_issue(user, self, new_articles).deliver_now if user.issue_alerts
+        rescue => e
+          Rails.logger.debug e
+        end
       end
     end
   end
