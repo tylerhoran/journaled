@@ -22,7 +22,7 @@
         %td= article.date.strftime('%D')
         %td= article.author
         %td= article.journal.name
-        %td= link_to article.name, "https://www.sci-hub.tw/#{article.doi}"
+        %td= link_to article.name, "https://sci-hub.tw/#{article.doi}"
         %td
           .hide
             = article.doi
