@@ -4,7 +4,7 @@ class Journal < ApplicationRecord
   validates :issn, uniqueness: true
 
   def self.refresh
-    find_each(&:refresh)
+    includes(:articles).find_each(&:refresh)
   end
 
   def refresh
