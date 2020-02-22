@@ -1,4 +1,4 @@
 :schedule:
   update_articles:
-    every: '6h'
+    cron: '0 0 * * * *'
     class: UpdateArticles
